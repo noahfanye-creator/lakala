@@ -119,7 +119,7 @@ const ReportModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
 
                 <div>
                    <h4 className="text-purple-400 font-bold text-sm mb-1">2. 艾略特波浪：第3浪高潮或第5浪衰竭</h4>
-                   <p className="text-sm text-slate-400">结合RSI>80，目前大概率处于主升浪高潮。目前的5分钟调整很可能是<span className="text-white">第4浪的微观修正</span>。</p>
+                   <p className="text-sm text-slate-400">结合RSI&gt;80，目前大概率处于主升浪高潮。目前的5分钟调整很可能是<span className="text-white">第4浪的微观修正</span>。</p>
                    <p className="text-sm text-slate-500 mt-1">警示：若这是第5浪顶，随后ABC调整级别将扩大到日线级，跌幅会很深。</p>
                 </div>
 
@@ -262,7 +262,7 @@ export const MicroTechDetail: React.FC<DetailProps> = ({ onBack }) => {
                   <div>
                     <p className="text-xs font-bold text-orange-300 uppercase mb-1">诊断结论</p>
                     <p className="text-sm text-slate-300 leading-relaxed">
-                      趋势极强但短期过热(RSI>80)，属于"鱼尾"阶段。5分钟级别已开始调整，<span className="text-orange-400 font-bold">宜守不宜追</span>。
+                      趋势极强但短期过热(RSI&gt;80)，属于"鱼尾"阶段。5分钟级别已开始调整，<span className="text-orange-400 font-bold">宜守不宜追</span>。
                     </p>
                   </div>
                 </div>
@@ -346,7 +346,7 @@ export const MicroTechDetail: React.FC<DetailProps> = ({ onBack }) => {
                 <h3 className="text-red-400 font-bold uppercase text-xs tracking-wider mb-2 flex items-center gap-2">
                   <AlertCircle size={14} /> 风险提示
                 </h3>
-                <div className="text-3xl font-bold text-white mb-1">RSI > 80</div>
+                <div className="text-3xl font-bold text-white mb-1">RSI &gt; 80</div>
                 <p className="text-sm text-slate-500">极度超买，随时可能出现日线级别的剧烈杀跌。</p>
               </div>
 

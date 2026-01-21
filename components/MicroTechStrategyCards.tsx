@@ -41,7 +41,7 @@ export const MicroTechStrategyCards: React.FC = () => {
           波浪理论：高潮/衰竭
         </h3>
         <p className="text-slate-400 text-sm mb-4">
-          RSI>80极值特征，处于3浪主升段顶部或5浪疯狂期。
+          RSI&gt;80极值特征，处于3浪主升段顶部或5浪疯狂期。
         </p>
         <div className="flex items-center justify-between mb-4">
           <div className="text-center">
