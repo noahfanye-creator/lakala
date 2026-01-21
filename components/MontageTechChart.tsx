@@ -12,17 +12,17 @@ import {
   Label
 } from 'recharts';
 
-// Data simulating a strong Wave 3 uptrend with a minor pullback at the end
+// Corrected Data: Strong rise 142 -> 162, Pullback to 160.02
 const data = [
-  { day: '起涨点', price: 80.00 },
-  { day: '浪1顶部', price: 88.50 },
-  { day: '浪2回调', price: 85.20 },
-  { day: '浪3加速', price: 92.00 },
-  { day: '突破', price: 96.50 },
-  { day: '近期高点', price: 102.15 },
-  { day: '现价', price: 101.79 }, // Closing price
-  { day: 'MA5支撑', price: 99.79 }, 
-  { day: 'MA10/黄金点', price: 94.12 },
+  { day: '起涨点', price: 142.00 },
+  { day: '加速段1', price: 148.50 },
+  { day: '加速段2', price: 155.20 },
+  { day: '主升浪', price: 160.80 },
+  { day: '高点', price: 162.15 }, // Intraday High
+  { day: '5分回调', price: 161.20 },
+  { day: '现价', price: 160.02 }, // Closing price
+  { day: 'MA5支撑', price: 158.60 }, 
+  { day: '黄金坑/MA10', price: 154.35 }, // Target
 ];
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -57,7 +57,7 @@ export const MontageTechChart: React.FC = () => {
           <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
           <XAxis dataKey="day" stroke="#475569" fontSize={12} tickLine={false} axisLine={false} />
           <YAxis 
-            domain={[75, 110]} 
+            domain={[140, 170]} 
             stroke="#475569" 
             fontSize={12} 
             tickLine={false} 
@@ -68,30 +68,30 @@ export const MontageTechChart: React.FC = () => {
           
           {/* Golden Buy Zone */}
           <ReferenceArea 
-            y1={94.00} 
-            y2={95.00} 
+            y1={154.00} 
+            y2={155.00} 
             fill="#10b981" 
             fillOpacity={0.15} 
             strokeOpacity={0}
           >
-            <Label value="稳健接回区 (94.0-95.0)" position="insideRight" fill="#10b981" fontSize={12} offset={10} />
+            <Label value="空中加油区 (154.0-155.0)" position="insideRight" fill="#10b981" fontSize={12} offset={10} />
           </ReferenceArea>
 
           {/* Key Reference Lines */}
-          <ReferenceLine y={102.00} stroke="#94a3b8" strokeDasharray="3 3">
-            <Label value="前高压力 (102.0)" position="left" fill="#94a3b8" fontSize={11} />
+          <ReferenceLine y={162.15} stroke="#94a3b8" strokeDasharray="3 3">
+            <Label value="近期高点 (162.15)" position="left" fill="#94a3b8" fontSize={11} />
           </ReferenceLine>
           
-          <ReferenceLine y={99.79} stroke="#fbbf24" strokeDasharray="3 3">
-             <Label value="MA5 激进支撑 (99.79)" position="left" fill="#fbbf24" fontSize={11} />
+          <ReferenceLine y={158.60} stroke="#fbbf24" strokeDasharray="3 3">
+             <Label value="30分MA5 (158.60)" position="left" fill="#fbbf24" fontSize={11} />
           </ReferenceLine>
 
-          <ReferenceLine y={94.12} stroke="#38bdf8" strokeDasharray="5 5">
-             <Label value="MA10 强支撑 (94.12)" position="left" fill="#38bdf8" fontSize={11} />
+          <ReferenceLine y={154.35} stroke="#38bdf8" strokeDasharray="5 5">
+             <Label value="30分MA10 (154.35)" position="left" fill="#38bdf8" fontSize={11} />
           </ReferenceLine>
 
           {/* Current Price Line */}
-          <ReferenceLine y={101.79} stroke="#fff" strokeDasharray="2 2" />
+          <ReferenceLine y={160.02} stroke="#fff" strokeDasharray="2 2" />
 
           {/* The Price Line */}
           <Area 

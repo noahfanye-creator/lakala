@@ -35,12 +35,12 @@ const stockDatabase: StockSummary[] = [
     id: 'montage-688008',
     name: '澜起科技',
     code: '688008',
-    price: '¥101.79',
+    price: '¥160.02',
     change: '+11.9%',
     trend: 'up',
     status: 'success', // Overall bullish
-    statusText: '主升浪 • 回调低吸',
-    strategy: '日线男上位主升浪，30分中枢震荡。关注94-95元黄金买点，回调即机会。',
+    statusText: '主升浪 • 空中加油',
+    strategy: '30分钟极强多头，RSI超买。关注154元(MA10)强支撑，等待5分回调低吸。',
     lastUpdate: '2026-01-22'
   }
 ];
