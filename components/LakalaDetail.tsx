@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { AnalysisChart } from './AnalysisChart';
-import { StrategyCards } from './StrategyCards';
+import { AnalysisChart } from './AnalysisChart.tsx';
+import { StrategyCards } from './StrategyCards.tsx';
 import { 
   ArrowDown, 
   ArrowLeft,

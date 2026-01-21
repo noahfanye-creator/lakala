@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { MicroTechChart } from './MicroTechChart';
-import { MicroTechStrategyCards } from './MicroTechStrategyCards';
+import { MicroTechChart } from './MicroTechChart.tsx';
+import { MicroTechStrategyCards } from './MicroTechStrategyCards.tsx';
 import { 
   ArrowDown, 
   ArrowLeft,
