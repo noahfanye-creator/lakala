@@ -105,7 +105,7 @@ const ReportModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
              <div className="space-y-4 ml-2">
                 <div>
                    <h4 className="text-yellow-500 font-bold text-sm mb-1">1. 斐波那契交易法：锁定“价格”区间</h4>
-                   <p className="text-sm text-slate-400">假设本轮上涨波段 (21.00 -> 32.00)，涨幅11元。</p>
+                   <p className="text-sm text-slate-400">假设本轮上涨波段 (21.00 -&gt; 32.00)，涨幅11元。</p>
                    <ul className="list-disc pl-5 mt-2 space-y-1 text-sm text-slate-400">
                       <li><strong className="text-slate-300">0.382回调位 (27.80)：</strong> <span className="text-market-down">已跌破</span>，调整力度较强。</li>
                       <li><strong className="text-white">0.500回调位 (26.50)：</strong> <span className="text-market-up">关键共振区</span>。与日线MA20(26.95)重合，构成极强支撑区 (26.50-27.00)。</li>
