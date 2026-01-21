@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { MontageTechChart } from './MontageTechChart.tsx';
-import { MontageTechStrategyCards } from './MontageTechStrategyCards.tsx';
+import { MontageTechChart } from './MontageTechChart';
+import { MontageTechStrategyCards } from './MontageTechStrategyCards';
 import { 
   ArrowLeft, 
   TrendingUp, 
@@ -158,15 +158,13 @@ export const MontageTechDetail: React.FC<DetailProps> = ({ onBack }) => {
 
   return (
     <div className="min-h-screen bg-market-dark text-slate-200 font-sans selection:bg-indigo-500/30">
-      
       <ReportModal isOpen={showReport} onClose={() => setShowReport(false)} />
 
-      {/* Header / Hero Section */}
+      {/* Header */}
       <header className="border-b border-slate-800 bg-slate-900/50 sticky top-0 z-50 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div className="flex items-center gap-4">
-               {/* Back Button */}
                <button 
                  onClick={onBack}
                  className="p-2 hover:bg-slate-800 rounded-full text-slate-400 hover:text-white transition-colors mr-2 border border-transparent hover:border-slate-700"
@@ -197,7 +195,7 @@ export const MontageTechDetail: React.FC<DetailProps> = ({ onBack }) => {
               <div className="h-8 w-px bg-slate-700 mx-2 hidden md:block"></div>
               <div className="flex gap-2">
                  <StatusBadge type="success" text="主升浪" />
-                 <StatusBadge type="warning" text="空中加油" />
+                 <StatusBadge type="warning" text="等待低吸" />
               </div>
             </div>
           </div>
@@ -213,16 +211,16 @@ export const MontageTechDetail: React.FC<DetailProps> = ({ onBack }) => {
             <div className="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-xl">
               <div className="flex items-center justify-between mb-6">
                  <h2 className="text-white font-semibold flex items-center gap-2">
-                   <Activity size={18} className="text-indigo-500" /> 核心数据监测
+                   <Activity className="text-indigo-500" /> 核心数据监测
                  </h2>
-                 <span className="text-xs text-slate-500 bg-slate-900 px-2 py-1 rounded">2026-01-22 实时</span>
+                 <span className="text-xs text-slate-500 bg-slate-900 px-2 py-1 rounded">实时监测中</span>
               </div>
               
               <div className="grid grid-cols-2 gap-y-6">
                 <Metric label="当前价格" value="¥160.02" trend="success" />
-                <Metric label="RSI(30分)" value="74.5" sub="进入超买" trend="warning" />
-                <Metric label="5分 MACD" value="-0.723" sub="良性回调" trend="neutral" />
-                <Metric label="目标支撑" value="¥154.3" sub="MA10/黄金坑" trend="neutral" />
+                <Metric label="30分趋势" value="极强" sub="MA5>MA10" trend="success" />
+                <Metric label="RSI(30分)" value="74.5" sub="高位超买" trend="warning" />
+                <Metric label="目标支撑" value="¥154.4" sub="MA10共振" trend="neutral" />
               </div>
               
               <div className="mt-6 pt-6 border-t border-slate-700">
@@ -231,7 +229,7 @@ export const MontageTechDetail: React.FC<DetailProps> = ({ onBack }) => {
                   <div>
                     <p className="text-xs font-bold text-red-300 uppercase mb-1">诊断结论</p>
                     <p className="text-sm text-slate-300 leading-relaxed">
-                      30分钟级别极强多头(90度拉升)。当前5分钟背驰引发的调整属于<span className="text-red-400 font-bold">"空中加油"</span>，支撑不破154元则是<strong className="text-white">第三类买点</strong>。
+                      处于主升浪高潮后的短线休整（空中加油）。30分钟级别极强，<span className="text-red-400 font-bold">只做回调低吸，不做追高</span>。
                     </p>
                   </div>
                 </div>
@@ -244,14 +242,12 @@ export const MontageTechDetail: React.FC<DetailProps> = ({ onBack }) => {
                 <span className="text-slate-400 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                   当前操作建议 <span className="bg-indigo-500 text-white text-[10px] px-1.5 py-0.5 rounded">建议</span>
                 </span>
-                <div className="text-3xl font-bold text-white mt-2 mb-1">回调低吸</div>
-                <p className="text-slate-400 text-sm">"不追高，蹲守154元黄金坑。"</p>
+                <div className="text-3xl font-bold text-white mt-2 mb-1">等待回调</div>
+                <p className="text-slate-400 text-sm">"千金难买牛回头，瞄准154元。"</p>
                 <div className="mt-4 text-xs text-indigo-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                    查看详细策略逻辑 <ArrowLeft size={12} className="-rotate-90" />
                 </div>
                </div>
-               {/* Background decoration */}
-               <Layers className="absolute -right-4 -bottom-4 text-slate-700 opacity-20 group-hover:opacity-30 transition-opacity" size={120} />
             </div>
           </div>
 
@@ -282,29 +278,29 @@ export const MontageTechDetail: React.FC<DetailProps> = ({ onBack }) => {
                 执行计划
               </h2>
               <p className="text-slate-400 mb-6">
-                当前价格 (160.02) 短线有抛压，等待"空中加油"完成。
+                针对强势股的“回马枪”策略。
               </p>
               
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center font-bold text-slate-300 border border-slate-600 shrink-0">1</div>
                   <div>
-                    <h4 className="font-bold text-slate-200">埋伏区间</h4>
-                    <p className="text-sm text-slate-400">重点关注 <span className="text-yellow-400 font-mono">154.00 - 155.00</span> (MA10支撑)。</p>
+                    <h4 className="font-bold text-slate-200">挂单/预警</h4>
+                    <p className="text-sm text-slate-400">关注区间： <span className="text-yellow-400 font-mono">154.00 - 155.00</span>。</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center font-bold text-slate-300 border border-slate-600 shrink-0">2</div>
                   <div>
-                    <h4 className="font-bold text-slate-200">进场信号</h4>
-                    <p className="text-sm text-slate-400">5分钟MACD绿柱缩短 + 底分型确认。</p>
+                    <h4 className="font-bold text-slate-200">确认信号</h4>
+                    <p className="text-sm text-slate-400">5分钟级别出现<span className="font-mono text-indigo-400">底分型</span>或MACD绿柱缩短。</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center font-bold text-slate-300 border border-slate-600 shrink-0">3</div>
                   <div>
-                    <h4 className="font-bold text-slate-200">预期目标</h4>
-                    <p className="text-sm text-slate-400">突破162高点，看至165-170元。</p>
+                    <h4 className="font-bold text-slate-200">防守止损</h4>
+                    <p className="text-sm text-slate-400">跌破153.00 (大阴线击穿) 则放弃。</p>
                   </div>
                 </div>
               </div>
@@ -312,17 +308,17 @@ export const MontageTechDetail: React.FC<DetailProps> = ({ onBack }) => {
 
             <div className="bg-slate-900/50 rounded-xl p-6 border border-slate-800 flex flex-col justify-center">
               <div className="mb-6">
-                <h3 className="text-red-400 font-bold uppercase text-xs tracking-wider mb-2 flex items-center gap-2">
-                  <AlertCircle size={14} /> 止损 / 风控
+                <h3 className="text-yellow-500 font-bold uppercase text-xs tracking-wider mb-2 flex items-center gap-2">
+                  <AlertCircle size={14} /> 风险提示
                 </h3>
-                <div className="text-3xl font-bold text-white mb-1">跌破 152.00</div>
-                <p className="text-sm text-slate-500">若跌漏MA10支撑，意味着强势结构破坏，转为震荡。</p>
+                <div className="text-3xl font-bold text-white mb-1">冲高回落</div>
+                <p className="text-sm text-slate-500">若明日直接高开低走放出巨量，可能是短线见顶信号。</p>
               </div>
 
-              <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
-                <h4 className="text-yellow-500 font-bold text-sm mb-1">操盘手笔记</h4>
-                <p className="text-yellow-200/70 text-sm italic">
-                  "这种90度拉升的票，回调就是给机会。只要不破MA10，就是典型的第三类买点，大胆低吸。"
+              <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+                <h4 className="text-blue-400 font-bold text-sm mb-1">交易心法</h4>
+                <p className="text-blue-200/70 text-sm italic">
+                  "强者恒强。在上升趋势中，每一次缩量回调都是买入机会，直到趋势被破坏。"
                 </p>
               </div>
             </div>
@@ -331,10 +327,10 @@ export const MontageTechDetail: React.FC<DetailProps> = ({ onBack }) => {
 
         {/* Footer */}
         <footer className="text-center text-slate-600 text-xs py-8">
-          <p>基于技术分析源 [688008, 154, 30M, 5M] 生成。不构成投资建议。</p>
+          <p>基于技术分析源 [688008] 生成。不构成投资建议。</p>
         </footer>
 
       </main>
     </div>
   );
-};
+}

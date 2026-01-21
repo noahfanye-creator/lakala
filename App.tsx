@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { StockDashboard } from './components/StockDashboard.tsx';
-import { LakalaDetail } from './components/LakalaDetail.tsx';
-import { MicroTechDetail } from './components/MicroTechDetail.tsx';
-import { MontageTechDetail } from './components/MontageTechDetail.tsx';
-import { StockSummary } from './types.ts';
+import { StockDashboard } from './components/StockDashboard';
+import { LakalaDetail } from './components/LakalaDetail';
+import { MicroTechDetail } from './components/MicroTechDetail';
+import { MontageTechDetail } from './components/MontageTechDetail';
+import { StockSummary } from './types';
 
 // Mock database of stocks
 const stockDatabase: StockSummary[] = [

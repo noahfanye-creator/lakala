@@ -1,6 +1,6 @@
 import React from 'react';
 import { TrendingUp, TrendingDown, ChevronRight, Activity, Clock, Search } from 'lucide-react';
-import { StockSummary } from '../types.ts';
+import { StockSummary } from '../types';
 
 interface DashboardProps {
   stocks: StockSummary[];
