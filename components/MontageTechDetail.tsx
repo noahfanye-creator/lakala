@@ -74,7 +74,8 @@ const ReportModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
                <h4 className="font-bold text-slate-200 mb-2">1. 30分钟级别 (极强)</h4>
                <ul className="space-y-2 text-slate-400">
                  <li><span className="text-slate-500">现价：</span> 160.02 元</li>
-                 <li><span className="text-slate-500">均线：</span> MA5(158.6) > MA10(154.3)，接近90度拉升。</li>
+                 {/* Fixed: Replaced > with &gt; */}
+                 <li><span className="text-slate-500">均线：</span> MA5(158.6) &gt; MA10(154.3)，接近90度拉升。</li>
                  <li><span className="text-yellow-500 font-bold">警示：</span> RSI高达74.5，进入超买区，有获利回吐压力。</li>
                </ul>
              </div>
@@ -113,7 +114,8 @@ const ReportModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
 
                 <div>
                    <h4 className="text-yellow-500 font-bold text-sm mb-1">3. 斐波那契：黄金坑测算</h4>
-                   <p className="text-sm text-slate-400">基于 142.00 -> 162.00 的急涨段：</p>
+                   {/* Fixed: Replaced -> with -&gt; */}
+                   <p className="text-sm text-slate-400">基于 142.00 -&gt; 162.00 的急涨段：</p>
                    <ul className="list-disc pl-5 mt-2 space-y-1 text-sm text-slate-400">
                       <li>0.236回撤位：157.3 (极强支撑)</li>
                       <li><strong className="text-yellow-400">0.382回撤位：154.4</strong> (与30分MA10重合)</li>
@@ -333,4 +335,4 @@ export const MontageTechDetail: React.FC<DetailProps> = ({ onBack }) => {
       </main>
     </div>
   );
-}
+};
